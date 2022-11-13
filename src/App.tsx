@@ -1,8 +1,8 @@
 import './App.css';
-import ProfileComponent from './features/profile/Profile';
+import Profile from './features/profile/Profile';
 
 function App() {
-  return <ProfileComponent/>;
+  return <Profile/>;
 }
 
 export default App;

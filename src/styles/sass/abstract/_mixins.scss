@@ -1,0 +1,40 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600&display=swap');
+
+@mixin fontColor($color: inherit) {
+    color: $color;
+}
+
+@mixin fontStyle($color: inherit) {
+    @include fontColor($color);
+    font-family: 'Montserrat', sans-serif;
+}
+
+@mixin titleStyle($color: inherit) {
+    @include fontStyle($color);
+    font-size: 10vw;
+    text-align: center;
+    font-weight: 600;
+}
+
+@mixin flex {
+    display: flex;
+}
+
+@mixin justifyAlign {
+    text-align: justify
+}
+
+@mixin centerHorizontal {
+    @include flex();
+    justify-content: center;
+}
+
+@mixin centerVertical {
+    @include flex();
+    align-items: center;
+}
+
+@mixin center() {
+    @include centerHorizontal();
+    @include centerVertical();
+}

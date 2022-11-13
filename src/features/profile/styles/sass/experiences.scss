@@ -1,0 +1,80 @@
+@use "../../../../styles/sass/abstract"as *;
+
+@media only screen and (min-width: 1170px) {
+    div#timelineMainContent .vertical-timeline--two-columns .vertical-timeline-element:nth-child(odd) .vertical-timeline-element-content .vertical-timeline-element-date {
+        left: 90%;
+    }
+}
+
+#timelineMainContent {
+    @include fontStyle(var(--color-secondary));
+
+    .vertical-timeline::before {
+        background: var(--color-secondary);
+    }
+
+    .vertical-timeline-element-icon {
+        background: var(--color-secondary) !important;
+        color: var(--color-primary) !important;
+        box-shadow: unset;
+        transition: 0.8s;
+
+        >div {
+            height: 100%;
+        }
+    }
+
+    .vertical-timeline-element-icon:hover,
+    .vertical-timeline-element-icon:has(+.vertical-timeline-element-content:hover) {
+        background-color: var(--color-hover) !important;
+        color: var(--color-primary) !important;
+        transition: 0.8s;
+    }
+
+    .vertical-timeline-element-icon:hover+.vertical-timeline-element-content,
+    .vertical-timeline-element-content:hover {
+        border: 3px solid var(--color-hover);
+        box-shadow: 0 3px 0 var(--color-hover);
+        transition: 0.8s;
+
+        .vertical-timeline-element-content-arrow {
+            border-right-color: var(--color-hover);
+            transition: 0.8s;
+        }
+
+        .vertical-timeline-element-title {
+            @include fontColor(var(--color-hover));
+            transition: 0.8s;
+        }
+    }
+
+    .vertical-timeline-element-content {
+        border: 3px solid var(--color-secondary);
+        box-shadow: 0 3px 0 var(--color-secondary);
+        background: unset;
+        transition: 0.8s;
+
+        .vertical-timeline-element-title {
+            font-size: 2em;
+            transition: 0.8s;
+        }
+
+        .vertical-timeline-element-subtitle {
+            @include fontStyle(var(--color-secondary));
+            font-size: 1em;
+        }
+
+        p {
+            @include fontStyle(var(--color-secondary));
+        }
+
+        .vertical-timeline-element-date {
+            @include fontStyle(var(--color-secondary));
+        }
+
+        .vertical-timeline-element-content-arrow {
+            border-right-color: var(--color-secondary);
+            transition: 0.8s;
+        }
+    }
+}

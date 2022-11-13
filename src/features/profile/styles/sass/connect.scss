@@ -1,0 +1,153 @@
+@use "../../../../styles/sass/abstract"as *;
+
+#chatbotMainContent {
+    padding: 20px;
+    height: 83vh;
+    border-radius: 5px;
+}
+
+div.react-chatbot-kit-chat-container {
+    @include centerHorizontal();
+    background-color: var(--color-primary);
+    width: 100%;
+    padding-bottom: 150px;
+
+    .react-chatbot-kit-chat-inner-container {
+        height: auto;
+        width: 100%;
+        background-color: var(--color-primary);
+
+        .react-chatbot-kit-chat-message-container {
+            height: auto;
+            overflow: hidden;
+            padding: unset;
+
+            .react-chatbot-kit-chat-bot-message {
+                background-color: var(--color-message);
+                word-break: break-word;
+                margin-left: unset;
+                width: auto;
+            }
+
+            .react-chatbot-kit-chat-bot-message-arrow {
+                border-right: 8px solid var(--color-message);
+            }
+
+            .MuiBadge-root {
+                margin: 0px 10px;
+                height: 40px;
+
+                >div {
+                    color: var(--color-secondary);
+                    background-color: unset;
+                    border: 2px solid var(--color-secondary);
+                }
+
+                >span {
+                    background-color: var(--color-hover);;
+                    color: var(--color-hover);;
+                }
+            }
+
+            .MuiPaper-root {
+                border: 2px solid var(--color-secondary);
+                background-color: var(--color-primary);
+                width: 300px;
+                margin: 10px;
+
+                .MuiCardContent-root p,
+                .MuiCardContent-root div {
+                    @include fontStyle(var(--color-secondary));
+                }
+
+                .MuiCardActions-root {
+                    >button {
+                        color: var(--color-secondary);
+                    }
+
+                    >button:hover {
+                        background-color: var(--color-hover);
+                        color: var(--color-primary);
+                        transition: 0.8s;
+                    }
+
+                    >button:active {
+                        background: var(--color-active);
+                        color: var(--color-primary);
+                        transition: 0s;
+                    }
+                }
+            }
+
+            div.react-chatbot-kit-user-avatar-container {
+                background-color: unset;
+                border: 2px solid var(--color-hover);
+
+                >svg {
+                    fill: var(--color-hover);
+                }
+            }
+
+            div.react-chatbot-kit-user-chat-message {
+                background-color: var(--color-hover);
+                color: var(--color-primary);
+            }
+
+            div.react-chatbot-kit-user-chat-message-arrow {
+                border-left: 8px solid var(--color-hover);
+            }
+
+        }
+
+        .react-chatbot-kit-chat-input-container {
+            height: 50px;
+            bottom: unset;
+
+            .react-chatbot-kit-chat-input-form {
+                button {
+                    background-color: var(--color-secondary);
+                    transition: 0.8s;
+                }
+
+                .react-chatbot-kit-chat-btn-send {
+                    background-color: var(--color-message);
+                    transition: 0.8s;
+
+                    .react-chatbot-kit-chat-btn-send-icon {
+                        fill: var(--color-message-button);
+                    }
+                }
+
+                .react-chatbot-kit-chat-btn-send:hover {
+                    background-color: var(--color-hover);
+                    transition: 0.8s;
+                }
+
+                .react-chatbot-kit-chat-btn-send:active {
+                    background: var(--color-active);
+                    transition: 0s;
+
+                    .react-chatbot-kit-chat-btn-send-icon {
+                        fill: var(--color-primary);
+                    }
+                }
+
+                .react-chatbot-kit-chat-input {
+                    border-top: 3px solid var(--color-message);
+                    background-color: var(--color-primary);
+                    color: var(--color-message-text);
+                    border-radius: unset;
+                }
+
+                .react-chatbot-kit-chat-input::placeholder {
+                    color: var(--color-message-text);
+                }
+
+                .react-chatbot-kit-chat-input:focus{
+                    outline: none;
+                    border-top: 3px solid var(--color-hover);
+                }
+            }
+        }
+    }
+}

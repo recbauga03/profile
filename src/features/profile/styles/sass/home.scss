@@ -1,0 +1,32 @@
+@use "../../../../styles/sass/abstract" as *;
+
+#main #container:has(#home) {
+    height: 100%;
+}
+
+#home {
+    @include center();
+    height: calc(100% - 64px);
+
+    #title {
+        @include titleStyle();
+        padding: 20px 0px;
+        color: var(--color-secondary);
+
+        span > span {
+            display: inline-block;            
+        }
+    }
+
+    .cursor {
+        background-color: #111;
+        height: 16px;
+        width: 16px;
+        border-radius: 50%;
+        position: fixed;
+        top: 0;
+        left: 0;
+        pointer-events: none;
+        mix-blend-mode: var(--blend-mode);
+    }
+}

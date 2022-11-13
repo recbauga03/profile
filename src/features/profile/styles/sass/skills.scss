@@ -1,0 +1,76 @@
+@use "../../../../styles/sass/abstract"as *;
+
+#skillsMainContent {
+    height: 83vh;
+    text-align: center;
+    color: var(--color-secondary);
+
+    .zoomItem {
+        display: inline-flex;
+    }
+
+    .skillItem {
+        margin: 10px;
+        color: var(--color-secondary);
+        border-color: var(--color-secondary);
+        transition: 0.8s !important;
+    }
+
+    .skillItem:hover {
+        border-color: var(--color-hover);
+        background-color: var(--color-hover);
+        color: var(--color-primary);
+        transition: 0.8s !important;
+    }
+
+    .skillItem:active {
+        border-color: var(--color-active);
+        background-color: var(--color-active);
+        color: var(--color-primary);
+        transition: 0s !important;
+    }
+
+    .skillItem:visited {
+        margin: 10px;
+        color: var(--color-secondary);
+        border-color: var(--color-secondary);
+        transition: 0.8s !important;
+    }
+
+    div.skillsContainer {
+        background-color: unset;
+        box-shadow: unset;
+    }
+
+    div.MuiDivider-root {
+        margin-bottom: 40px;
+    }
+
+    
+    div.MuiDivider-root::before,
+    div.MuiDivider-root::after {
+        border-top: thin solid var(--color-secondary);
+    }
+
+    div.MuiGrid-container {
+
+        >div>div:first-child::before,
+        >div>div:first-child::after {
+            border-top: thin solid var(--color-secondary);
+        }
+
+        span:not(.zoomItem)>div {
+            background-color: var(--color-secondary);
+            color: var(--color-primary);
+        }
+    }
+
+}
+
+@media (max-width: 599px) {
+    #skillsMainContent {
+        #dividerTech {
+            margin-top: 50px;
+        }
+    }
+}

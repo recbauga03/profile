@@ -1,0 +1,76 @@
+@use "../../../../styles/sass/abstract" as *;
+@use "sass:meta";
+
+:root:has(.light) {
+    --color-primary: #{meta.inspect($light-primary1)};
+    --color-secondary: #{meta.inspect($light-secondary1)};
+    --color-hover: #{meta.inspect($light-secondary2)};
+    --color-active: #{meta.inspect($light-secondary3)};
+    --color-message: #{meta.inspect($light-secondary1)};
+    --color-message-button: #{meta.inspect($light-primary1)};
+    --color-message-text: #{meta.inspect($light-secondary1)};
+    --color-blend: #{meta.inspect($light-blend)};
+    --blend-mode: lighten;
+}
+
+:root:has(.dark) {
+    --color-primary: #{meta.inspect($dark-primary1)};
+    --color-secondary: #{meta.inspect($dark-secondary1)};
+    --color-hover: #{meta.inspect($dark-secondary2)};
+    --color-active: #{meta.inspect($dark-secondary3)};
+    --color-message: #{meta.inspect($dark-primary2)};
+    --color-message-button: #{meta.inspect($dark-secondary1)};
+    --color-message-text: #{meta.inspect($dark-secondary1)};
+    --color-blend: #{meta.inspect($dark-blend)};
+    --blend-mode: difference;
+    
+}
+
+#main {
+    @include flex();
+    height: 100vh;
+    background-color: var(--color-primary);
+
+    .content {
+        @include fontStyle();
+
+        padding: 20px;
+        flex-grow: 1;
+    }
+
+    header {
+        box-shadow: unset;
+        background-color: var(--color-primary);
+        color: var(--color-secondary);
+        height: 64px;
+    }
+
+    #container {
+        background-color: var(--color-primary);
+        height: fit-content;
+        padding: unset;
+
+        div.title {
+            @include titleStyle(var(--color-secondary));
+        }
+        .paper {
+            background-color: var(--color-primary);
+        }
+    }
+}
+
+.container {
+    overflow-y: auto;
+    height: 90vh;
+    width: 50vw;
+    position: absolute;
+    right: 5%;
+    border-radius: 5px;
+
+    >* {
+        background: rgba(38, 70, 83, 0.4);
+        box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+        backdrop-filter: blur(7.3px);
+        -webkit-backdrop-filter: blur(7.3px);
+    }
+}

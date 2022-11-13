@@ -1,0 +1,41 @@
+@use "./abstract"as *;
+
+#drawer {
+    background-color: var(--color-primary);
+
+    >div {
+        background-color: var(--color-primary);
+        border: unset;
+    }
+
+    .navIcon {
+        @include fontStyle(var(--color-secondary));
+    }
+
+    .navLabel {
+        @include fontStyle(var(--color-secondary));
+    }
+
+    #drawerHeader {
+        button svg {
+            fill: var(--color-secondary);
+            transition: fill 0.8s !important;
+        }
+
+        button:hover svg {
+            fill: var(--color-hover);
+            transition: fill 0.8s !important;
+        }
+
+        button:active svg {
+            fill: var(--color-active);
+            transition: fill 0s !important;
+        }
+    }
+
+    #themeMode {
+        bottom: 0;
+        position: absolute;
+    }
+
+}

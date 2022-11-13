@@ -1,0 +1,14 @@
+div.drawerItem svg {
+    fill: var(--color-secondary);
+    transition: fill 0.8s !important;
+}
+
+div.drawerItem:hover svg {
+    fill: var(--color-hover);
+    transition: fill 0.8s !important;
+}
+
+div.drawerItem:active svg {
+    fill: var(--color-active);
+    transition: fill 0s !important;
+}

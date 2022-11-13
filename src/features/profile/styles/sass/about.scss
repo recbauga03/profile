@@ -1,0 +1,15 @@
+@use "../../../../styles/sass/abstract"as *;
+
+#aboutMainContent {
+
+    .title,
+    .content {
+        @include fontStyle();
+        @include justifyAlign();
+    }
+
+    .title:not(:first-child) {
+        margin-top: 50px;
+    }
+
+}

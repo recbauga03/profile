@@ -1,0 +1,24 @@
+@use "../../../../styles/sass/abstract"as *;
+
+.optionContainer {
+    >button {
+        border: 1px solid var(--color-secondary);
+        color: var(--color-secondary);
+        text-transform: unset;
+        margin: 10px;
+    }
+
+    >button:hover {
+        border: 1px solid var(--color-hover);
+        background-color: var(--color-hover);
+        color: var(--color-primary);
+        transition: background 0.8s;
+    }
+
+    >button:active {
+        border: 1px solid var(--color-active);
+        background: var(--color-active);
+        color: var(--color-primary);
+        transition: background 0s;
+    }
+}

@@ -1,0 +1,36 @@
+@use "./abstract" as *;
+
+#toolbar {
+    button svg {
+        fill: var(--color-secondary);
+        transition: fill 0.8s !important;
+    }
+    
+    button:hover svg {
+        fill: var(--color-hover);
+        transition: fill 0.8s !important;
+    }
+    
+    button:active svg {
+        fill: var(--color-active);
+        transition: fill 0s !important;
+    }
+}
+
+#navTitle {
+    >a{
+        @include fontStyle(var(--color-secondary));
+        text-decoration: none;
+        transition: color 0.8s;
+    }
+
+    >a:hover{
+        @include fontStyle(var(--color-hover));
+        transition: color 0.8s;
+    }
+
+    >a:active{
+        @include fontStyle(var(--color-active));
+        transition: color 0s;
+    }
+}

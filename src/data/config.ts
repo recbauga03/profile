@@ -47,7 +47,7 @@ export const experiences = {
             title: "Hong Leong Bank",
             subtitle: "Java Developer",
             link: "https://www.hlb.com.my",
-            description: "Enhanced Client Facing Retail Internet Banking Web Application. Build Branch Remittance Web Application from ground-up",
+            description: "Enhanced Client Facing Retail Internet Banking Web Application. Built Branch Remittance Web Application from ground-up",
         },
         {
             date: "Apr 2018 – Nov 2018",
@@ -323,6 +323,18 @@ export const connect = {
             answer: "Hi! 👋 Let's begin by selecting from the topics below.",
             options: { widget: "options" }
         },
+        {
+            text: 'name',
+            keywords: ['name'],
+            answer: "Hi! 👋 I am Jessie Brian Revil. Know me more by selecting from the topics below.",
+            options: { widget: "options" }
+        },
+        {
+            text: 'name',
+            keywords: ['name'],
+            answer: "Hi! 👋 I am Jessie Brian Revil. Know me more by selecting from the topics below.",
+            options: { widget: "options" }
+        },
     ],
 };
 
@@ -332,28 +344,28 @@ export const about = {
         {
             title: "<Choice/>",
             content: [
-                "Back when I was about to decide which major in college should I take, I am struggling in making decision whether I should take Dentistry, same as my mother; or should I take Pharmaceutical Sciences, same path as my father. Bachelor of Science in Nursing is one of my choices as well due to its popularity at that time. From these healthcare career options, I decided to take Computer Science.",
-                "I have learned in my early age that decisions should be made with care. I started evaluating my options that can lead me to success. One thing I know of myself is that I am bad with memorization. I also know that I enjoy problem solving in my math and programming classes back in high school. These classes require logic and creativity in solving problems. Computer Science has this characterization, where encountered issues do not have a verbatim template in crafting a solution. These became the variables that leads to the career that where I am at.",
+                "Back when I was about to decide on which major in college should I take, making decision is a struggle. Should I take Dentistry, same as my mother? Or should I take Pharmaceutical Sciences, same path as my father? Additionally, due to popularity at that time, I included Bachelor of Science in Nursing in one of my selections. From these healthcare career options, I decided to take Computer Science.",
+                "I have learned in my early age that decisions should be made with care. One thing I know of myself is that memorization is my weakness. I also know that I enjoy problem solving in my math and programming classes back in high school. Having these variables made me lean to a decision to take a course that relates to these subjects.",
             ],
         },
         {
             title: "<Career/>",
             content: [
-                "From the years working with several companies, I have experienced enhancing some existing projects, building projects from ground-up, and doing research and development with working prototype. These projects use several combinations of programming languages and technologies. Majority of my work focus on web development; some are in-house, and some are client-facing application. ",
-                "I have worked with an outsourcing company that provides services to its Japanese Clients. It was indeed a challenge as the instructions and deliverables were written in Japanese. I am commending my previous employer for I have adopted the Japanese work culture that now propels my professional career.",
-                "I am now working for one of the leading banks in Malaysia. I am proud to be one of the developers of our Internet Banking System, specifically the remittance services. Working with this company expands my understanding on the domain of financial technology. It can be sometimes intimidating working with an enterprise project, but having a solid foundation and a good set of teams will absolutely produce a jubilant career.",
+                "From my years working with several companies, I have experienced enhancing some existing projects, building projects from ground-up, and doing research and development with working prototype. Several combinations of programming languages and technologies were used for these projects. Majority of my work focus on web development applications; some are in-house, and some are client-facing applications.",
+                "An outsourcing company, providing services to their Japanese Clients, became my first employer. It was a challenging experience to work having instructions and deliverables in Japanese. I am commending my previous employer for I have adopted the Japanese work culture that now propels my professional career.",
+                "I am now working for one of the leading banks in Malaysia. I am proud to be one of the developers of our Internet Banking System, specifically the remittance services. Working with this company expands my understanding on the domain of financial technology. It can be intimidating working with an enterprise project, but having a solid foundation and a good set of teams will absolutely produce a jubilant career.",
             ],
         },
         {
             title: "<Lifestyle/>",
             content: [
-                "One cannot deny that Computer Programming is a key element of my life. There was a time when I enjoy providing answers in Stack Overflow questions, or had raised issue in one of the GitHub projects. Outside of programming, watching movie or tv series is a good stress reliever.  I am entertained by Marvel’s MEU, and multi-awarded movies. Moreover, I start my day by keeping myself healthy though doing some routines in our gym. These are the simple pleasures that I am guilty of.",
+                "One cannot deny that Computer Programming is a key element of my life. There was a time when I enjoy providing answers in Stack Overflow questions, or had raised issue in one of the GitHub projects. Outside of programming, watching movie or tv series is a good stress reliever.  I am entertained by Marvel’s MEU, and multi-awarded movies. Moreover, I start my day by keeping myself healthy though doing some routines in our gym.",
             ]
         },
         {
             title: "<Growth/>",
             content: [
-                "I have created a physical Kanban board that lists my short- and long-term plans. This helps me visualize myself in the future, and for me to create a realistic process to make my goals obtainable. I review my knowledge through occasionally solving programming problems on some of the online technical assessment websites. The technologies used by my employers are very limited, and for me to expand my technological stack, I sometimes create small personal projects using technologies I haven’t tried before. Technologies kept on updating, and multiple resources are available online, thus it is important to invest on oneself to keep up with the changes."
+                "I have a physical Kanban board that lists my short- and long-term plans. This helps me visualize myself in the future, and for me to create a realistic process to make my goals obtainable. I review my knowledge through occasionally solving programming problems on some of the online technical assessment websites. The technologies used by my employers are very limited, and for me to expand my technological stack, I sometimes create small personal projects using technologies I haven’t tried before. It is a fact that technologies kept on updating. Thus, it is important to invest on oneself to keep up with the changes."
             ],
         },
     ],

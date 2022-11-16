@@ -8,7 +8,18 @@ export const config = {
         width: 240,
     },
     fullname: "Jessie Brian Revil",
-    title: "Jessie Brian Revil",
+    title: [
+        {
+            text: "I am Jessie Brian Revil",
+            deleteCharacter: 18,
+        },
+        {
+            text: "a Web Developer",
+        },
+        {
+            text: "an Oracle Certified Professional",
+        },
+    ],
     links: [
         {
             text: 'Experiences',
@@ -55,7 +66,7 @@ export const experiences = {
             title: "TrustArc",
             subtitle: "Analyst Programmer",
             link: "https://trustarc.com/",
-            description: "Enhancement on Online Behavioral Advertising, Cookie Consents Web Application Portal, and GDPR Webhooks Services"
+            description: "Enhanced Online Behavioral Advertising, Cookie Consents Web Application Portal, and GDPR Webhooks Services"
         },
         {
             date: "Jun 2014 - Mar 2018",

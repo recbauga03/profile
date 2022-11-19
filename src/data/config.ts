@@ -17,7 +17,7 @@ export const config = {
             text: "a Web Developer",
         },
         {
-            text: "an Oracle Certified Professional",
+            text: "an Oracle Certified",
         },
     ],
     links: [

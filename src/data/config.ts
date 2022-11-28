@@ -360,28 +360,28 @@ export const about = {
         {
             title: "<Choice/>",
             content: [
-                "Back when I was about to decide on which major in college should I take, making decision is a struggle. Should I take Dentistry, same as my mother? Or should I take Pharmaceutical Sciences, same path as my father? Additionally, due to popularity at that time, I included Bachelor of Science in Nursing in one of my selections. From these healthcare career options, I decided to take Computer Science.",
-                "I have learned in my early age that decisions should be made with care. One thing I know of myself is that memorization is my weakness. I also know that I enjoy problem solving in my math and programming classes back in high school. Having these variables made me lean to a decision to take a course that relates to these subjects.",
+                "Making decisions back then was difficult, particularly when it comes to choosing my college major. Should I pursue a career in dentistry like my mother? Should I choose a career in pharmaceutical sciences as my father did? The Bachelor of Science in Nursing was also one of my choices with how well it was at the time. Out of all of these healthcare profession prospects, I decided to pursue a degree in computer science.",
+                "I've known since a young age that decisions should be carefully considered. I'm aware of one personal flaw: my memory is poor. I am also aware that I valued problem-solving in my high school math and computer courses. These factors made me incline toward choosing to enroll in a course that deals with these topics.",
             ],
         },
         {
             title: "<Career/>",
             content: [
-                "From my years working with several companies, I have experienced enhancing some existing projects, building projects from ground-up, and doing research and development with working prototype. Several combinations of programming languages and technologies were used for these projects. Majority of my work focus on web development applications; some are in-house, and some are client-facing applications.",
-                "An outsourcing company, providing services to their Japanese Clients, became my first employer. It was a challenging experience to work having instructions and deliverables in Japanese. I am commending my previous employer for I have adopted the Japanese work culture that now propels my professional career.",
-                "I am now working for one of the leading banks in Malaysia. I am proud to be one of the developers of our Internet Banking System, specifically the remittance services. Working with this company expands my understanding on the domain of financial technology. It can be intimidating working with an enterprise project, but having a solid foundation and a good set of teams will absolutely produce a jubilant career.",
+                "I have expertise refining some existing projects, building projects from ground - up, and conducting research and development with a functional prototype thanks to my years of working with several companies. For these initiatives, a variety of programming language and technological combinations were employed. Web development apps, some internal and some external, make up the majority of my work.",
+                "My first job was with an outsourcing firm that offered services to its Japanese customers. Working with instructions and deliverables in Japanese was a difficult experience. I thank my former company for assisting me in assimilating the Japanese work culture, which has helped advance my professional career.",
+                "I work for one of the major banks in Malaysia. I feel honoured to have helped with the creation of the remittance services for the internet banking system. Working for this organisation has allowed me to gain more knowledge in the area of financial technology. Although working on an enterprise project can be intimidating, having a strong foundation and a strong team will undoubtedly result in a successful career.",
             ],
         },
         {
             title: "<Lifestyle/>",
             content: [
-                "One cannot deny that Computer Programming is a key element of my life. There was a time when I enjoy providing answers in Stack Overflow questions, or had raised issue in one of the GitHub projects. Outside of programming, watching movie or tv series is a good stress reliever.  I am entertained by Marvel’s MEU, and multi-awarded movies. Moreover, I start my day by keeping myself healthy though doing some routines in our gym.",
+                "It is indisputable that computer programming plays a significant role in my life. There was a time when I took pleasure in responding to Stack Overflow queries or submitting issues to GitHub projects. A nice way to decompress is to watch a movie or TV show. Marvel's MEU and its numerous films amuse me. Furthermore, I work out in our gym in the morning to keep myself in shape.",
             ]
         },
         {
             title: "<Growth/>",
             content: [
-                "I have a physical Kanban board that lists my short- and long-term plans. This helps me visualize myself in the future, and for me to create a realistic process to make my goals obtainable. I review my knowledge through occasionally solving programming problems on some of the online technical assessment websites. The technologies used by my employers are very limited, and for me to expand my technological stack, I sometimes create small personal projects using technologies I haven’t tried before. It is a fact that technologies kept on updating. Thus, it is important to invest on oneself to keep up with the changes."
+                "I have a list of both my short-term and long-term goals on my personal Kanban board. I can create a more realistic strategy to accomplish my goals and a better picture of who I will be in the future. I occasionally work through programming tasks on some of the online technical assessment websites to refresh my memory. I periodically work on modest personal projects using technologies I've never used before in order to vary my technological toolset. It's true that technology is always changing. It's essential to invest in oneself if one wants to keep up with the changes."
             ],
         },
     ],

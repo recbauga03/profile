@@ -396,5 +396,11 @@ export const projects= {
             url: "https://jessierevil04.github.io/json-formatter/",
             img: "/profile/img/dalle/programmer.png",
         },
+        {
+            name: "XML Formatter",
+            description: "A client-side XML formatter, which keeps all data stay on your browser, and are never forwarded to any backend server. This allows it to be a user-friendly service for anybody who needs good looking and well-formatted XML data for their web or mobile app project - without compromising security or risking privacy.",
+            url: "https://jessierevil04.github.io/xml-formatter/",
+            img: "/profile/img/dalle/programmer2.png",
+        },
     ]
 }

@@ -1,0 +1,26 @@
+#projectMainContent .MuiGrid-root {
+  text-align: center;
+  text-align: -moz-center;
+  text-align: -webkit-center;
+}
+#projectMainContent .MuiGrid-item .MuiTypography-h5, #projectMainContent .MuiGrid-item p {
+  color: var(--color-secondary);
+}
+#projectMainContent .MuiGrid-item p {
+  text-align: justify;
+}
+#projectMainContent .MuiGrid-item:hover .MuiTypography-h5 {
+  color: var(--color-hover);
+  transition: 0.8s;
+}
+#projectMainContent .MuiGrid-item:hover img {
+  filter: unset;
+  transition: 0.8s;
+}
+#projectMainContent .MuiGrid-item .MuiPaper-root {
+  background-color: var(--color-paper);
+}
+#projectMainContent .MuiGrid-item img {
+  filter: grayscale(100%);
+  transition: 0.8s;
+}/*# sourceMappingURL=projects.css.map */

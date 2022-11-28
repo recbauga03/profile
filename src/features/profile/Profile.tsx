@@ -8,7 +8,8 @@ import Experiences from "./components/Experiences";
 import About from "./components/About";
 import Skills from "./components/Skills";
 import Connect from "./components/connect/Connect";
-import { connect, experiences, skills, about } from "../../data/config";
+import Projects from "./components/Projects";
+import { connect, experiences, skills, projects, about } from "../../data/config";
 import { Routes, Route, useLocation } from "react-router-dom";
 import { useAppSelector } from "../../app/hooks";
 import { selectTheme } from "../../features/profile/profileSlice";
@@ -49,6 +50,7 @@ export default function Profile() {
           <Route path="/skills" element={<Skills details={skills} />} />
           <Route path="/connect" element={<Connect details={connect} />} />
           <Route path="/about" element={<About details={about} />} />
+          <Route path="/projects" element={<Projects details={projects} />} />
         </Routes>
       </Box>
     </Box>

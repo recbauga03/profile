@@ -2,6 +2,7 @@ import LaptopIcon from '@mui/icons-material/Laptop';
 import LightbulbIcon from '@mui/icons-material/Lightbulb';
 import LinkIcon from '@mui/icons-material/Link';
 import InfoIcon from '@mui/icons-material/Info';
+import BuildIcon from '@mui/icons-material/Build';
 
 export const config = {
     drawer: {
@@ -11,13 +12,12 @@ export const config = {
     title: [
         {
             text: "I am Jessie Brian Revil",
-            deleteCharacter: 18,
         },
         {
-            text: "a Web Developer",
+            text: "Web Developer",
         },
         {
-            text: "an Oracle Certified",
+            text: "Oracle Certified Professional",
         },
     ],
     links: [
@@ -35,6 +35,11 @@ export const config = {
             text: 'Connect',
             path: '/connect',
             icon: LinkIcon,
+        },
+        {
+            text: 'Projects',
+            path: '/projects',
+            icon: BuildIcon,
         },
         {
             text: 'About',
@@ -382,4 +387,14 @@ export const about = {
     ],
 };
 
-
+export const projects= {
+    title: 'Projects',
+    contents: [
+        {
+            name: "JSON Formatter",
+            description: "A client-side JSON formatter, which keeps all data stay on your browser, and are never forwarded to any backend server. This allows it to be a user-friendly service for anybody who needs good looking and well-formatted JSON data for their web or mobile app project - without compromising security or risking privacy.",
+            url: "https://jessierevil04.github.io/json-formatter/",
+            img: "/profile/img/dalle/programmer.png",
+        },
+    ]
+}

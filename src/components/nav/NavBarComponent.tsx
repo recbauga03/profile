@@ -23,9 +23,7 @@ const NavBarComponent: React.FC = () => {
 
   const typeWriterInit = (typewriter: TypewriterClass) => {
     config.title.forEach((title) => {
-      let deleteChar = title.deleteCharacter
-        ? title.deleteCharacter
-        : title.text.length;
+      let deleteChar = title.text.length;
 
       typewriter = typewriter
         .typeString(title.text)

@@ -10,6 +10,7 @@
     --color-message-button: #{meta.inspect($light-primary1)};
     --color-message-text: #{meta.inspect($light-secondary1)};
     --color-blend: #{meta.inspect($light-blend)};
+    --color-paper: #{meta.inspect($light-primary2)};
     --blend-mode: lighten;
 }
 
@@ -22,6 +23,7 @@
     --color-message-button: #{meta.inspect($dark-secondary1)};
     --color-message-text: #{meta.inspect($dark-secondary1)};
     --color-blend: #{meta.inspect($dark-blend)};
+    --color-paper: #{meta.inspect($dark-primary2)};
     --blend-mode: difference;
     
 }

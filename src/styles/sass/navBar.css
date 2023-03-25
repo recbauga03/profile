@@ -1,0 +1,30 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600&display=swap");
+#toolbar button svg {
+  fill: var(--color-secondary);
+  transition: fill 0.8s !important;
+}
+#toolbar button:hover svg {
+  fill: var(--color-hover);
+  transition: fill 0.8s !important;
+}
+#toolbar button:active svg {
+  fill: var(--color-active);
+  transition: fill 0s !important;
+}
+
+#navTitle > a {
+  color: var(--color-secondary);
+  font-family: "Montserrat", sans-serif;
+  text-decoration: none;
+  transition: color 0.8s;
+}
+#navTitle > a:hover {
+  color: var(--color-hover);
+  font-family: "Montserrat", sans-serif;
+  transition: color 0.8s;
+}
+#navTitle > a:active {
+  color: var(--color-active);
+  font-family: "Montserrat", sans-serif;
+  transition: color 0s;
+}/*# sourceMappingURL=navBar.css.map */

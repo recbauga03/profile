@@ -1,0 +1,32 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600&display=swap");
+#drawer {
+  background-color: var(--color-primary);
+}
+#drawer > div {
+  background-color: var(--color-primary);
+  border: unset;
+}
+#drawer .navIcon {
+  color: var(--color-secondary);
+  font-family: "Montserrat", sans-serif;
+}
+#drawer .navLabel {
+  color: var(--color-secondary);
+  font-family: "Montserrat", sans-serif;
+}
+#drawer #drawerHeader button svg {
+  fill: var(--color-secondary);
+  transition: fill 0.8s !important;
+}
+#drawer #drawerHeader button:hover svg {
+  fill: var(--color-hover);
+  transition: fill 0.8s !important;
+}
+#drawer #drawerHeader button:active svg {
+  fill: var(--color-active);
+  transition: fill 0s !important;
+}
+#drawer #themeMode {
+  bottom: 0;
+  position: absolute;
+}/*# sourceMappingURL=drawer.css.map */

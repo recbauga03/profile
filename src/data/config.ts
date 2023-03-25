@@ -259,14 +259,45 @@ export const connect = {
         options: {}
     },
     default2: {
-
         text: '',
         keywords: [],
         answer: "Let's begin by selecting from the topics below.",
         options: { widget: "options", delay: 1500 }
     },
-    connects: ['email', 'linkedin', 'github', 'stackoverflow', 'hackerrank'],
+    connects: ['ChatGPT', 'email', 'linkedin', 'github', 'stackoverflow', 'hackerrank'],
+    
+    gpt: {
+        text: 'ChatGPT',
+        options: ['Exit ChatGPT'],
+        exit: {
+            text: 'Exit ChatGPT',
+            context: {
+                text: 'Exit ChatGPT',
+                keywords: [],
+                answer: "Hello! 👋 Let's begin by selecting from the topics below.",
+                options: { widget: "options", delay: 1500 }
+            },
+        },
+        answers: {
+            tokenSetting: {
+                answer: "Great! Now the token is set, input your chatGPT queries below.",
+                options: { widget: "gpt" },
+            }
+        }
+    },
     context: [
+        {
+            text: 'ChatGPT',
+            keywords: ['ChatGPT', 'gpt'],
+            answer: 'ChatGPT requires OpenAI API Key. Kindly input the key below.',
+            options: { widget: "gptInit" },
+            card: {
+                header: '',
+                content: '',
+                subcontent: 'This open source, single-page application profile does not collect your OpenAPI API keys. Your keys are used only within this session and are deleted as soon as you end the session. You can learn how to generate the API key by clicking the link below.',
+                link: 'https://elephas.app/blog/how-to-create-openai-api-keys-cl5c4f21d281431po7k8fgyol0',
+            },
+        },
         {
             text: 'email',
             keywords: ['email', 'email address', 'mail'],
@@ -403,4 +434,12 @@ export const projects= {
             img: "/profile/img/dalle/programmer2.png",
         },
     ]
+}
+
+
+export const openAI= {
+    url: {
+        base: 'https://api.openai.com/v1',
+        completions: '/completions',
+    }
 }

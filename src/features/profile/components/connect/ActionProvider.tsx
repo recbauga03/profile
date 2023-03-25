@@ -3,13 +3,14 @@ import React from "react";
 import { createClientMessage } from "react-chatbot-kit";
 import { useAppDispatch } from "../../../../app/hooks";
 import { CardState, setCardState } from "./connectSlice";
+import { addMessage } from "../../../openai/openAISlice";
 
-interface Context {
+export interface Context {
   text: string;
   keywords: string[];
   answer: string;
   options: IMessageOptions;
-  card ?: CardState;
+  card?: CardState;
 }
 
 interface IMessageOptions {
@@ -25,20 +26,20 @@ type Props = {
   children: React.DetailedReactHTMLElement<any, HTMLElement>;
 };
 
-const updateMessages = (setState:any, message:any, prevIndex:number) => {
+const updateMessages = (setState: any, message: any, prevIndex: number) => {
   setState((prev: any) => {
     let messages = prev.messages;
 
-    if(messages.at(prevIndex).widget) {
+    if (messages.at(prevIndex).widget) {
       messages.at(prevIndex).widget = null;
     }
 
-    return ({
+    return {
       ...prev,
       messages: [...prev.messages, message],
-    })
+    };
   });
-}
+};
 
 const ActionProvider: React.FC<Props> = ({
   createChatBotMessage,
@@ -46,6 +47,15 @@ const ActionProvider: React.FC<Props> = ({
   children,
 }) => {
   const dispatch = useAppDispatch();
+
+  const handleGPTTokenSetting = (context: Context) => {
+    handleInput(context);
+  };
+
+  const handleChatGPTResponse = (context: Context) => {
+    handleInput(context); 
+    dispatch(addMessage({role: "assistant", content: context.answer}));
+  };
 
   const handleInput = (context: Context) => {
     const botMessage = createChatBotMessage(context.answer, context.options);
@@ -55,7 +65,7 @@ const ActionProvider: React.FC<Props> = ({
   const handleSelection = (context: Context) => {
     const clientMessage = createClientMessage(context.text, {});
 
-    if(context.card) {
+    if (context.card) {
       dispatch(setCardState(context.card));
     }
 
@@ -71,6 +81,8 @@ const ActionProvider: React.FC<Props> = ({
           actions: {
             handleInput,
             handleSelection,
+            handleGPTTokenSetting,
+            handleChatGPTResponse,
           },
         });
       })}

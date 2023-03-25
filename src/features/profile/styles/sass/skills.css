@@ -1,0 +1,58 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600&display=swap");
+#skillsMainContent {
+  height: 83vh;
+  text-align: center;
+  color: var(--color-secondary);
+}
+#skillsMainContent .zoomItem {
+  display: inline-flex;
+}
+#skillsMainContent .skillItem {
+  margin: 10px;
+  color: var(--color-secondary);
+  border-color: var(--color-secondary);
+  transition: 0.8s !important;
+}
+#skillsMainContent .skillItem:hover {
+  border-color: var(--color-hover);
+  background-color: var(--color-hover);
+  color: var(--color-primary);
+  transition: 0.8s !important;
+}
+#skillsMainContent .skillItem:active {
+  border-color: var(--color-active);
+  background-color: var(--color-active);
+  color: var(--color-primary);
+  transition: 0s !important;
+}
+#skillsMainContent .skillItem:visited {
+  margin: 10px;
+  color: var(--color-secondary);
+  border-color: var(--color-secondary);
+  transition: 0.8s !important;
+}
+#skillsMainContent div.skillsContainer {
+  background-color: unset;
+  box-shadow: unset;
+}
+#skillsMainContent div.MuiDivider-root {
+  margin-bottom: 40px;
+}
+#skillsMainContent div.MuiDivider-root::before,
+#skillsMainContent div.MuiDivider-root::after {
+  border-top: thin solid var(--color-secondary);
+}
+#skillsMainContent div.MuiGrid-container > div > div:first-child::before,
+#skillsMainContent div.MuiGrid-container > div > div:first-child::after {
+  border-top: thin solid var(--color-secondary);
+}
+#skillsMainContent div.MuiGrid-container span:not(.zoomItem) > div {
+  background-color: var(--color-secondary);
+  color: var(--color-primary);
+}
+
+@media (max-width: 599px) {
+  #skillsMainContent #dividerTech {
+    margin-top: 50px;
+  }
+}/*# sourceMappingURL=skills.css.map */

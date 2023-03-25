@@ -1,5 +1,5 @@
 import MuiAppBar, { AppBarProps as MuiAppBarProps } from "@mui/material/AppBar";
-import { styled, useTheme, Theme, CSSObject } from "@mui/material/styles";
+import { styled } from "@mui/material/styles";
 import { config } from "../../data/config";
 
 const drawerWidth = config.drawer.width;

@@ -1,5 +1,5 @@
 import MuiDrawer from "@mui/material/Drawer";
-import { styled, useTheme, Theme, CSSObject } from "@mui/material/styles";
+import { styled, Theme, CSSObject } from "@mui/material/styles";
 import { config } from "../../data/config";
 
 const drawerWidth = config.drawer.width;

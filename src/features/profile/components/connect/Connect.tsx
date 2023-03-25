@@ -10,10 +10,15 @@ import { createChatBotMessage } from "react-chatbot-kit";
 import "react-chatbot-kit/build/main.css";
 import "../../styles/connect.css";
 
+interface GPT {
+  options: string[];
+}
+
 interface Details {
   title: string;
   message: string;
   connects: string[];
+  gpt: GPT;
 }
 
 type Props = {
@@ -61,6 +66,27 @@ const Connect: React.FC<Props> = ({ details }) => {
         props: undefined,
         mapStateToProps: [],
       },
+      {
+        widgetName: "gptInit",
+        widgetFunc: (props: any) => (
+          <>
+            <CardWidget />
+            <Options props={props} options={details.gpt.options} />
+          </>
+        ),
+        props: undefined,
+        mapStateToProps: [],
+      },
+      {
+        widgetName: "gpt",
+        widgetFunc: (props: any) => (
+          <>
+            <Options props={props} options={details.gpt.options} />
+          </>
+        ),
+        props: undefined,
+        mapStateToProps: [],
+      }
     ],
   };
 

@@ -1,0 +1,46 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600&display=swap");
+#onlineCertMainContent div.title span {
+  font-size: 7vw;
+}
+#onlineCertMainContent .zoomItem {
+  display: inline-flex;
+}
+#onlineCertMainContent .certItem {
+  margin: 10px;
+  color: var(--color-secondary);
+  border-color: var(--color-secondary);
+  transition: 0.8s !important;
+}
+#onlineCertMainContent .certItem:hover {
+  border-color: var(--color-hover);
+  background-color: var(--color-hover);
+  color: var(--color-primary);
+  transition: 0.8s !important;
+}
+#onlineCertMainContent .certItem:active {
+  border-color: var(--color-active);
+  background-color: var(--color-active);
+  color: var(--color-primary);
+  transition: 0s !important;
+}
+#onlineCertMainContent .certItem:visited {
+  margin: 10px;
+  color: var(--color-secondary);
+  border-color: var(--color-secondary);
+  transition: 0.8s !important;
+}
+#onlineCertMainContent > div.MuiBox-root > div.MuiBox-root {
+  border-color: var(--color-secondary);
+}
+#onlineCertMainContent .MuiButtonBase-root {
+  color: var(--color-secondary);
+}
+#onlineCertMainContent .MuiTabs-indicator {
+  background-color: var(--color-secondary);
+}
+#onlineCertMainContent .MuiChip-root {
+  margin: 5px;
+}
+#onlineCertMainContent p.MuiTypography-root {
+  text-align: center;
+}/*# sourceMappingURL=onlineCert.css.map */

@@ -117,9 +117,6 @@ div.react-chatbot-kit-chat-container .react-chatbot-kit-chat-inner-container .re
 div.react-chatbot-kit-chat-container .react-chatbot-kit-chat-inner-container .react-chatbot-kit-chat-input-container .react-chatbot-kit-chat-input-form .react-chatbot-kit-chat-input::-moz-placeholder {
   color: var(--color-message-text);
 }
-div.react-chatbot-kit-chat-container .react-chatbot-kit-chat-inner-container .react-chatbot-kit-chat-input-container .react-chatbot-kit-chat-input-form .react-chatbot-kit-chat-input:-ms-input-placeholder {
-  color: var(--color-message-text);
-}
 div.react-chatbot-kit-chat-container .react-chatbot-kit-chat-inner-container .react-chatbot-kit-chat-input-container .react-chatbot-kit-chat-input-form .react-chatbot-kit-chat-input::placeholder {
   color: var(--color-message-text);
 }

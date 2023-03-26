@@ -1,0 +1,16 @@
+div.MuiDialog-container {
+  & > div.MuiPaper-root {
+    max-width: unset;
+  }
+
+  div.react-pdf__Document {
+    .textLayer,
+    .annotationLayer {
+      display: none;
+    }
+  }
+
+  .MuiTypography-root {
+    text-align: center;
+  }
+}

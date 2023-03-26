@@ -1,0 +1,61 @@
+@use "../../../../styles/sass/abstract" as *;
+
+#onlineCertMainContent {
+  div.title {
+    span {
+      font-size: 7vw;
+    }
+  } 
+  
+  .zoomItem {
+    display: inline-flex;
+  }
+
+  .certItem {
+    margin: 10px;
+    color: var(--color-secondary);
+    border-color: var(--color-secondary);
+    transition: 0.8s !important;
+  }
+
+  .certItem:hover {
+    border-color: var(--color-hover);
+    background-color: var(--color-hover);
+    color: var(--color-primary);
+    transition: 0.8s !important;
+  }
+
+  .certItem:active {
+    border-color: var(--color-active);
+    background-color: var(--color-active);
+    color: var(--color-primary);
+    transition: 0s !important;
+  }
+
+  .certItem:visited {
+    margin: 10px;
+    color: var(--color-secondary);
+    border-color: var(--color-secondary);
+    transition: 0.8s !important;
+  }
+
+  &>div.MuiBox-root>div.MuiBox-root {
+    border-color: var(--color-secondary);
+  }
+
+  .MuiButtonBase-root {
+    color: var(--color-secondary);
+  }
+
+  .MuiTabs-indicator {
+    background-color: var(--color-secondary);
+  }
+
+  .MuiChip-root {
+    margin: 5px;
+  }
+
+  p.MuiTypography-root {
+    text-align: center;
+  }
+}

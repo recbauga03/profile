@@ -1,0 +1,10 @@
+div.MuiDialog-container > div.MuiPaper-root {
+  max-width: unset;
+}
+div.MuiDialog-container div.react-pdf__Document .textLayer,
+div.MuiDialog-container div.react-pdf__Document .annotationLayer {
+  display: none;
+}
+div.MuiDialog-container .MuiTypography-root {
+  text-align: center;
+}/*# sourceMappingURL=pdfViewerDialog.css.map */

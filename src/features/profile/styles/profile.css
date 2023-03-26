@@ -44,7 +44,6 @@
 }
 #main #container {
   background-color: var(--color-primary);
-  height: -webkit-fit-content;
   height: -moz-fit-content;
   height: fit-content;
   padding: unset;

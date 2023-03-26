@@ -6,7 +6,6 @@ export const openAIParser = async (
   apiKey: string,
   callback: Function
 ) => {
-
   const responseCovertCallback = (data: any) => {
     const context = {
       text: "response",
@@ -18,5 +17,22 @@ export const openAIParser = async (
     callback(context);
   };
 
-  postOpenAIChatCompletions(messages, apiKey, responseCovertCallback);
+  const errorCallback = (error: any) => {
+    const context = {
+      text: "response",
+      keywords: [],
+      options: { widget: "gpt" },
+      answer: "",
+    };
+
+    if (error.response) {
+      context.answer = error.response.data.error.code + ": " + error.response.data.error.message;
+    } else {
+      context.answer = error.message;
+    }
+
+    callback(context);
+  };
+
+  postOpenAIChatCompletions(messages, apiKey, responseCovertCallback, errorCallback);
 };

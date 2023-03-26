@@ -1,3 +1,4 @@
+import { useEffect } from "react";
 import Chatbot from "react-chatbot-kit";
 import ActionProvider from "./ActionProvider";
 import MessageParser from "./MessageParser";
@@ -9,6 +10,8 @@ import { useRef } from "react";
 import { createChatBotMessage } from "react-chatbot-kit";
 import "react-chatbot-kit/build/main.css";
 import "../../styles/connect.css";
+import { clear } from "../../../openai/openAISlice";
+import { useAppDispatch } from "../../../../app/hooks";
 
 interface GPT {
   options: string[];
@@ -29,6 +32,11 @@ export let chatbotEndRef: any;
 
 const Connect: React.FC<Props> = ({ details }) => {
   chatbotEndRef = useRef(null);
+  const dispatch = useAppDispatch();
+
+  useEffect(() => {
+    dispatch(clear());
+  }, []);
 
   const config = {
     initialMessages: [
@@ -86,7 +94,7 @@ const Connect: React.FC<Props> = ({ details }) => {
         ),
         props: undefined,
         mapStateToProps: [],
-      }
+      },
     ],
   };
 

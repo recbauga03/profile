@@ -33,7 +33,7 @@ export const config = {
       icon: LightbulbIcon,
     },
     {
-      text: "Online Certifications",
+      text: "Online Certificates",
       path: "/onlineCert",
       icon: WorkspacePremiumIcon,
     },

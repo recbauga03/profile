@@ -466,7 +466,7 @@ export const openAI = {
 };
 
 export const onlineCertifications = {
-  title: "Online Certifications",
+  title: "Online Certificates",
   sources: [
     {
       title: "Udemy",

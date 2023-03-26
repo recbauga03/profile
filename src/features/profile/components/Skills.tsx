@@ -98,7 +98,7 @@ const Skills: React.FC<Props> = ({ details }) => {
         <Grid xs={2} sm={1} md={1}>
           <Item className="skillsContainer">
             <Divider id="dividerCert">
-              <Chip label="Certifications" />
+              <Chip label="Certificates" />
             </Divider>
             {certifications}
           </Item>

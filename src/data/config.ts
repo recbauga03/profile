@@ -103,6 +103,30 @@ export const skills = {
             title: 'Oracle Certified Professional',
             link: 'https://www.credly.com/badges/00e2bd5c-3a37-46b4-b6e2-20532e6165d0',
         },
+        {
+            title: 'Agile Crash Course: Agile Project Management; Agile Delivery',
+            link: 'https://www.ude.my/UC-SBGYYHNA',
+        },
+        {
+            title: 'React JS, Angular & Vue JS - Quickstart & Comparison',
+            link: 'https://www.ude.my/UC-K04DOWHM',
+        },
+        {
+            title: 'IntelliJ IDEA Tricks to Boost Productivity for Java Devs',
+            link: 'https://www.ude.my/UC-HXZNJV00',
+        },
+        {
+            title: 'Acumen Presents: Sarah Robb O\'Hagan on Competitive Advantage',
+            link: 'https://www.ude.my/UC-8SJQZ9W1',
+        },
+        {
+            title: 'Productivity and Time Management for the Overwhelmed',
+            link: 'https://www.ude.my/UC-3Z9LJ1TD',
+        },
+        {
+            title: 'Happiness Psychology: 5 Proven Tips',
+            link: 'https://www.ude.my/UC-KC3LHFG3',
+        },
     ],
     technologies: [
         {

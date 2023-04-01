@@ -72,8 +72,7 @@ const OnlineCertifications: React.FC<Props> = ({ details }) => {
   };
 
   const handleCertClick = (title: string, link: string, type?: string) => {
-    console.log({link});
-
+    
     if (type && type === "pdf") {
       setPDFOpen(true);
       setPDFTitle(title);

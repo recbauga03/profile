@@ -1,4 +1,3 @@
-// in ActionProvider.jsx
 import React from "react";
 import { createClientMessage } from "react-chatbot-kit";
 import { useAppDispatch } from "../../../../app/hooks";
@@ -16,6 +15,7 @@ export interface Context {
 interface IMessageOptions {
   loading?: boolean;
   widget?: string;
+  widgetHistory?: boolean;
   delay?: number;
   payload?: any;
 }
@@ -29,9 +29,10 @@ type Props = {
 const updateMessages = (setState: any, message: any, prevIndex: number) => {
   setState((prev: any) => {
     let messages = prev.messages;
+    let prevMessage = messages.at(prevIndex);
 
-    if (messages.at(prevIndex).widget) {
-      messages.at(prevIndex).widget = null;
+    if (prevMessage.widget && !prevMessage.widgetHistory) {
+      prevMessage.widget = null;
     }
 
     return {
@@ -52,9 +53,18 @@ const ActionProvider: React.FC<Props> = ({
     handleInput(context);
   };
 
-  const handleChatGPTResponse = (context: Context) => {
+  const handleOpenAIChatResponse = (context: Context) => {
     handleInput(context); 
     dispatch(addMessage({role: "assistant", content: context.answer}));
+  };
+
+  const handleOpenAIImageResponse = (context: Context) => {
+
+    if (context.card) {
+      dispatch(setCardState(context.card));
+    }
+
+    handleInput(context); 
   };
 
   const handleInput = (context: Context) => {
@@ -82,7 +92,8 @@ const ActionProvider: React.FC<Props> = ({
             handleInput,
             handleSelection,
             handleGPTTokenSetting,
-            handleChatGPTResponse,
+            handleOpenAIChatResponse,
+            handleOpenAIImageResponse
           },
         });
       })}

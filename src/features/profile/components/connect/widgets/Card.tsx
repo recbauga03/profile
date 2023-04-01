@@ -7,7 +7,7 @@ import { useState, useEffect } from "react";
 import { chatbotEndRef } from "../Connect";
 
 import { useAppSelector } from "../../../../../app/hooks";
-import { initialState, selectCardState } from "../connectSlice";
+import { ContentType, initialState, selectCardState } from "../connectSlice";
 
 const Cards: React.FC = () => {
   const cardState = useAppSelector(selectCardState);
@@ -31,6 +31,12 @@ const Cards: React.FC = () => {
     scrollingBottom();
   });
 
+  let content : string | React.ReactElement = card.content;
+
+  if (ContentType.IMAGE === card.contentType) {
+    content = <img src={card.content} className="imgCard"/>;
+  }
+
   return (
     <Card sx={{ minWidth: 275 }}>
       <CardContent>
@@ -38,7 +44,7 @@ const Cards: React.FC = () => {
           {card.header}
         </Typography>
         <Typography variant="h6" component="div">
-          {card.content}
+          {content}
         </Typography>
         <Typography variant="body2" sx={{ mb: 1.5 }} color="text.secondary">
           {card.subcontent}

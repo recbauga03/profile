@@ -4,6 +4,7 @@ import LinkIcon from "@mui/icons-material/Link";
 import InfoIcon from "@mui/icons-material/Info";
 import BuildIcon from "@mui/icons-material/Build";
 import WorkspacePremiumIcon from "@mui/icons-material/WorkspacePremium";
+import { ContentType } from '../features/profile/components/connect/connectSlice'
 
 export const config = {
   drawer: {
@@ -273,6 +274,7 @@ export const connect = {
   },
   connects: [
     "ChatGPT",
+    "DALL·E",
     "email",
     "linkedin",
     "github",
@@ -280,13 +282,11 @@ export const connect = {
     "hackerrank",
   ],
 
-  gpt: {
-    text: "ChatGPT",
-    options: ["Exit ChatGPT"],
+  openAI: {
     exit: {
-      text: "Exit ChatGPT",
+      text: "Exit",
       context: {
-        text: "Exit ChatGPT",
+        text: "Exit",
         keywords: [],
         answer: "Hello! 👋 Let's begin by selecting from the topics below.",
         options: { widget: "options", delay: 1500 },
@@ -295,17 +295,39 @@ export const connect = {
     answers: {
       tokenSetting: {
         answer:
-          "Great! Now the token is set, input your chatGPT queries below.",
-        options: { widget: "gpt" },
+          "Great! Now the token is set, input your queries below.",
+        options: { widget: "openai" },
       },
     },
+    options: ["Exit"],
+    chat: {
+      text: "ChatGPT",
+    }, 
+    image: {
+      text: "DALL·E",
+    }    
+    
   },
+  
   context: [
     {
       text: "ChatGPT",
       keywords: ["ChatGPT", "gpt"],
       answer: "ChatGPT requires OpenAI API Key. Kindly input the key below.",
-      options: { widget: "gptInit" },
+      options: { widget: "openAIWidget" },
+      card: {
+        header: "",
+        content: "",
+        subcontent:
+          "This open source, single-page application profile does not collect your OpenAPI API keys. Your keys are used only within this session and are deleted as soon as you end the session. You can learn how to generate the API key by clicking the link below.",
+        link: "https://elephas.app/blog/how-to-create-openai-api-keys-cl5c4f21d281431po7k8fgyol0",
+      },
+    },
+    {
+      text: "DALL·E",
+      keywords: ["DALL·E", "gpt"],
+      answer: "DALL·E requires OpenAI API Key. Kindly input the key below.",
+      options: { widget: "openAIWidget" },
       card: {
         header: "",
         content: "",
@@ -322,6 +344,7 @@ export const connect = {
       card: {
         header: "eMail",
         content: "jessie.revil04@gmail.com",
+        contentType: ContentType.TEXT,
         subcontent:
           "Send me a message using this email. I will try my best to respond the soonest possible. 😁",
         link: "mailto:jessie.revil04@gmail.com",
@@ -335,6 +358,7 @@ export const connect = {
       card: {
         header: "LinkedIn",
         content: "jessie-brian-revil",
+        contentType: ContentType.TEXT,
         subcontent: "Visit, ping, or send me a connect invite. 😎",
         link: "https://www.linkedin.com/in/jessie-brian-revil/",
       },
@@ -347,6 +371,7 @@ export const connect = {
       card: {
         header: "GitHub",
         content: "jessierevil04",
+        contentType: ContentType.TEXT,
         subcontent:
           "This is the repository for my public personal projects. 🤭",
         link: "https://github.com/jessierevil04",
@@ -360,6 +385,7 @@ export const connect = {
       card: {
         header: "Stack Overflow",
         content: "jessie-brian-revil",
+        contentType: ContentType.TEXT,
         subcontent: "You may check my Stack Overflow activities from here 😬",
         link: "https://stackoverflow.com/users/7187887/jessie-brian-revil",
       },
@@ -372,6 +398,7 @@ export const connect = {
       card: {
         header: "Hacker Rank",
         content: "jessie_revil04",
+        contentType: ContentType.TEXT,
         subcontent: "I sometimes solve some programming challenges here 🤓",
         link: "https://www.hackerrank.com/jessie_revil04",
       },
@@ -456,13 +483,6 @@ export const projects = {
       img: "/profile/img/dalle/programmer2.png",
     },
   ],
-};
-
-export const openAI = {
-  url: {
-    base: "https://api.openai.com/v1",
-    completions: "/completions",
-  },
 };
 
 export const onlineCertifications = {

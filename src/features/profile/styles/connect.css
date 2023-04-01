@@ -68,6 +68,15 @@ div.react-chatbot-kit-chat-container .react-chatbot-kit-chat-inner-container .re
   color: var(--color-primary);
   transition: 0s;
 }
+div.react-chatbot-kit-chat-container .react-chatbot-kit-chat-inner-container .react-chatbot-kit-chat-message-container .MuiPaper-root .MuiCardContent-root:has(.imgCard) {
+  padding-bottom: 0px;
+}
+div.react-chatbot-kit-chat-container .react-chatbot-kit-chat-inner-container .react-chatbot-kit-chat-message-container .MuiPaper-root .imgCard {
+  width: 100%;
+  width: -moz-available;
+  width: -webkit-fill-available;
+  width: fill-available;
+}
 div.react-chatbot-kit-chat-container .react-chatbot-kit-chat-inner-container .react-chatbot-kit-chat-message-container div.react-chatbot-kit-user-avatar-container {
   background-color: unset;
   border: 2px solid var(--color-hover);

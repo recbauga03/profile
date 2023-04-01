@@ -2,30 +2,26 @@
 import React from "react";
 import { connect } from "../../../../data/config";
 import { useAppSelector, useAppDispatch } from "../../../../app/hooks";
+import { ChatCompletionRequestMessage } from "openai";
+import { parseOpenAI } from "../../../openai/openAIParser";
 import {
   selectIsOpenAIEnabled,
-  toggleIsOpenAIEnabled,
   setAPIKey,
   selectAPIKey,
   selectMessages,
   setMessage,
-  clear
+  clear,
+  selectType,
 } from "../../../openai/openAISlice";
-import { openAIParser } from "../../../openai/openAIParser";
 
 type Props = {
   actions: any;
   children: React.DetailedReactHTMLElement<any, HTMLElement>;
 };
 
-export const parser = (
-  message: string,
-  callback: Function,
-  toggleIsChatGPTEnabled?: Function
-) => {
-
-  if (message === connect.gpt.exit.text) {
-    callback(connect.gpt.exit.context);
+export const parser = (message: string, callback: Function) => {
+  if (message === connect.openAI.exit.text) {
+    callback(connect.openAI.exit.context);
     return;
   }
 
@@ -36,10 +32,6 @@ export const parser = (
       var keyword = conn.keywords[j];
 
       if (message.toLowerCase().includes(keyword.toLowerCase())) {
-        if (conn.text === connect.gpt.text && toggleIsChatGPTEnabled) {
-          toggleIsChatGPTEnabled();
-        }
-
         conn.text = message;
         callback(conn);
         return;
@@ -57,52 +49,37 @@ export const parser = (
 const MessageParser: React.FC<Props> = ({ actions, children }) => {
   const isChatOpenAIEnabled = useAppSelector(selectIsOpenAIEnabled);
   const apiKey = useAppSelector(selectAPIKey);
-  const dispatch = useAppDispatch();
+  const openAIType = useAppSelector(selectType);
   let messages = useAppSelector(selectMessages);
 
-  const openAIKeySetting = (apiKey: string) => {
-    dispatch(setAPIKey(apiKey));
-    actions.handleGPTTokenSetting(connect.gpt.answers.tokenSetting);
-  };
-
-  const parseOpenAI = (message: string) => {
-    if (!apiKey) {
-      openAIKeySetting(message);
-      return;
-    }
-
-    messages = [
-      ...messages,
-      {
-        role: "user",
-        content: message,
-      },
-    ];
-
-    openAIParser(messages, apiKey, actions.handleChatGPTResponse);
-    dispatch(setMessage(messages));
-  };
+  const dispatch = useAppDispatch();
 
   const restartOpenAPI = (text: string) => {
     parser(text, actions.handleInput);
     dispatch(clear());
-  }
+  };
 
   const parse = (message: string) => {
-
-    if (message === connect.gpt.exit.text) {
+    if (message === connect.openAI.exit.text) {
       restartOpenAPI(message);
       return;
     }
 
     if (isChatOpenAIEnabled) {
-      parseOpenAI(message);
+      parseOpenAI({
+        actions: actions,
+        message: message,
+        messages: messages,
+        apiKey: apiKey,
+        openAIType: openAIType,
+        setAPIKey: (apiKey: string) => dispatch(setAPIKey(apiKey)),
+        setMessage: (messages: ChatCompletionRequestMessage[]) =>
+          dispatch(setMessage(messages)),
+      });
       return;
     }
 
-    parser(message, actions.handleInput, () =>
-      dispatch(toggleIsOpenAIEnabled())
-    );
+    parser(message, actions.handleInput);
   };
 
   return (

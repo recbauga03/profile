@@ -77,6 +77,17 @@ div.react-chatbot-kit-chat-container {
                         transition: 0s;
                     }
                 }
+
+                .MuiCardContent-root:has(.imgCard) {
+                    padding-bottom: 0px;
+                }
+
+                .imgCard {
+                    width: 100%;
+                    width: -moz-available;
+                    width: -webkit-fill-available;
+                    width: fill-available;
+                }
             }
 
             div.react-chatbot-kit-user-avatar-container {

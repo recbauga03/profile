@@ -8,12 +8,12 @@ import CardWidget from "./widgets/Card";
 import StyledBadge from "../../../../components/common/StyledBadge";
 import { useRef } from "react";
 import { createChatBotMessage } from "react-chatbot-kit";
-import "react-chatbot-kit/build/main.css";
-import "../../styles/connect.css";
 import { clear } from "../../../openai/openAISlice";
 import { useAppDispatch } from "../../../../app/hooks";
+import "react-chatbot-kit/build/main.css";
+import "../../styles/connect.css";
 
-interface GPT {
+interface OpenAI {
   options: string[];
 }
 
@@ -21,7 +21,7 @@ interface Details {
   title: string;
   message: string;
   connects: string[];
-  gpt: GPT;
+  openAI: OpenAI;
 }
 
 type Props = {
@@ -75,21 +75,21 @@ const Connect: React.FC<Props> = ({ details }) => {
         mapStateToProps: [],
       },
       {
-        widgetName: "gptInit",
+        widgetName: "openAIWidget",
         widgetFunc: (props: any) => (
           <>
             <CardWidget />
-            <Options props={props} options={details.gpt.options} />
+            <Options props={props} options={details.openAI.options} />
           </>
         ),
         props: undefined,
         mapStateToProps: [],
       },
       {
-        widgetName: "gpt",
+        widgetName: "openai",
         widgetFunc: (props: any) => (
           <>
-            <Options props={props} options={details.gpt.options} />
+            <Options props={props} options={details.openAI.options} />
           </>
         ),
         props: undefined,

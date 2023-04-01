@@ -1,20 +1,24 @@
 import { useEffect } from "react";
 import { parser } from "../MessageParser";
-import { openAIParser } from "../../../../openai/openAIParser";
+import { parseOpenAI } from "../../../../openai/openAIParser";
 import Button from "@mui/material/Button";
-import "../../../styles/options.css";
 
+import { ChatCompletionRequestMessage } from "openai";
 import { connect } from "../../../../../data/config";
 import { useAppSelector, useAppDispatch } from "../../../../../app/hooks";
 import {
-  selectIsOpenAIEnabled,
   toggleIsOpenAIEnabled,
-  setAPIKey,
-  selectAPIKey,
+  selectIsOpenAIEnabled,
   selectMessages,
+  selectAPIKey,
+  selectType,
   setMessage,
-  clear
+  setAPIKey,
+  setType,
+  clear,
+  OpenAIType,
 } from "../../../../openai/openAISlice";
+import "../../../styles/options.css";
 
 type Props = {
   options: string[];
@@ -29,31 +33,10 @@ const Options: React.FC<Props> = ({ options, props }) => {
   const actionProvider = props.actionProvider;
   const isChatOpenAIEnabled = useAppSelector(selectIsOpenAIEnabled);
   const apiKey = useAppSelector(selectAPIKey);
-  const dispatch = useAppDispatch();
+  const openAIType = useAppSelector(selectType);
   let messages = useAppSelector(selectMessages);
 
-  const openAIKeySetting = (apiKey: string) => {
-    dispatch(setAPIKey(apiKey));
-    actionProvider.handleChatGPTTokenSetting(connect.gpt.answers.tokenSetting);
-  };
-
-  const parseOpenAI = (text: string) => {
-    if (!apiKey) {
-      openAIKeySetting(text);
-      return;
-    }
-
-    messages = [
-      ...messages,
-      {
-        role: "user",
-        content: text,
-      },
-    ];
-
-    openAIParser(messages, apiKey, actionProvider.handleChatGPTResponse);
-    dispatch(setMessage(messages));
-  };
+  const dispatch = useAppDispatch();
 
   const restartOpenAPI = (text: string) => {
     parser(text, actionProvider.handleSelection);
@@ -62,19 +45,34 @@ const Options: React.FC<Props> = ({ options, props }) => {
 
   const selectOption = (text: string) => {
 
-    if (text === connect.gpt.exit.text) {
+    if (text === connect.openAI.exit.text) {
       restartOpenAPI(text);
       return;
     }
 
     if (isChatOpenAIEnabled) {
-      parseOpenAI(text);
+      parseOpenAI({
+        actions: actionProvider,
+        message: text,
+        messages: messages,
+        apiKey: apiKey,
+        openAIType: openAIType,
+        setAPIKey: (apiKey: string) => dispatch(setAPIKey(apiKey)),
+        setMessage: (messages: ChatCompletionRequestMessage[]) =>
+          dispatch(setMessage(messages)),
+      });
       return;
     }
 
-    parser(text, actionProvider.handleSelection, () =>
-      dispatch(toggleIsOpenAIEnabled())
-    );
+    if (text === connect.openAI.chat.text) {
+      dispatch(toggleIsOpenAIEnabled());
+      dispatch(setType(OpenAIType.CHAT));
+    } else if (text === connect.openAI.image.text) {
+      dispatch(toggleIsOpenAIEnabled());
+      dispatch(setType(OpenAIType.IMAGE));
+    }
+
+    parser(text, actionProvider.handleSelection);
   };
 
   const buttons = options.map((option, index) => (

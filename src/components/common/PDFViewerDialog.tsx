@@ -27,7 +27,6 @@ const PDFViewerDialog: React.FC<Props> = ({ open, title, pdf, onClose }) => {
     setNumPages(num);
   };
 
-  console.log(window.location.origin + pdf);
   return (
     <Dialog onClose={handleClose} open={open}>
       <DialogTitle>{title}</DialogTitle>
